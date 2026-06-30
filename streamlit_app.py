@@ -19,4 +19,4 @@ chat_completion = client.chat.completions.create(
 
 st.write(chat_completion.choices[0].message.content)
 """
-st.write(pd.DataFrame({"A": [1,2,3],"B":[4,5,6}))
+st.write(pd.DataFrame({"A": [1,2,3],"B":[4,5,6]}))
