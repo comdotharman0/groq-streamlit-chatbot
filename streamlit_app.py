@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from groq import Groq,RateLimitError,APIConnectionError, AIStatusError
+from groq import Groq,RateLimitError,APIConnectionError, APIStatusError
 class MyChatBot:
     def __init__(self,name,max_tokens,model):
         self.name= name
@@ -54,7 +54,7 @@ def main():
         st.write("Got "+str(rle))
     except APIConnectionError as ace:
         st.write("Got "+str(ace))
-    except AIStatusError as ase:
+    except APIStatusError as ase:
         st.write("Got "+str(ase))
     finally:
         st.write("That's All!")
