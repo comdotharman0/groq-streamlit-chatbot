@@ -18,20 +18,25 @@ class MyChatBot:
         self.model = model
     def generate_text(self,question):
         self.messages.append({
-                "role": "user",
-                "content": question,
-        });
-        chat_completion = self.client.chat.completions.create(
-        messages=self.messages,
-        model=self.model,
-        max_tokens=self.max_tokens,
-    )
+        "role": "user",
+        "content": question,
+        })
+        try:
+            chat_completion = self.client.chat.completions.create(
+            messages=self.messages,
+            model=self.model,
+            max_tokens=self.max_tokens,
+        )
+        except (RateLimitError, APIConnectionError, APIStatusError) as e:
+            self.messages.pop()
+            st.error(f"Something went wrong: {e}")
+            return  # stop here — no value needed, just exit before the crash below
+
         response = chat_completion.choices[0].message.content
         self.messages.append({
-                "role": "assistant",
-                "content": response,
-        })
-        return self.messages[-1]["content"]
+        "role": "assistant",
+        "content": response,
+    })
     def run(self):
         if self.chat_submit_btn and self.chat_input != "":
             self.generate_text(self.chat_input)
