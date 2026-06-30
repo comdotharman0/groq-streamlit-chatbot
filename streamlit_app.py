@@ -34,10 +34,6 @@ class MyChatBot:
         return self.messages[-1]["content"]
     def run(self):
         if self.chat_submit_btn and self.chat_input != "":
-            self.messages.append({
-                "role": "user",
-                "content": self.chat_input,
-            })
             self.generate_text(self.chat_input)
         for i in self.messages:
             st.write(i["content"])
