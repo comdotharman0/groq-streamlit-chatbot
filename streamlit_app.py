@@ -17,9 +17,13 @@ def generate_text(question,max_tokens):
         model="llama-3.3-70b-versatile",
         max_tokens=max_tokens,
     )
+    return chat_completion.choices[0].message.content
 chat_input = st.text_area("Ask Anything")
 chat_submit_btn = st.button("Submit")
+if chat_submit_btn:
+    st.write(generate_text(chat_input,150))
+    
 
-st.write(chat_completion.choices[0].message.content)
+
 
 st.write(pd.DataFrame({"A": [1,2,3],"B":[4,5,6]}))
