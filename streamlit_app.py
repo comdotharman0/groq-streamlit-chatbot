@@ -1,5 +1,6 @@
 import streamlit as st
-from groq import Groq
+import pandas as pd
+"""from groq import Groq
 st.title("Groq Streamlit Chatbot")
 St.header("Groq Streamlit Chatbot 🤖")
 client = Groq(
@@ -17,4 +18,5 @@ chat_completion = client.chat.completions.create(
 )
 
 st.write(chat_completion.choices[0].message.content)
-
+"""
+st.write(pd.DataFrame({"A": [1,2,3],"B":[4,5,6}))
