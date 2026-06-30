@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
-"""from groq import Groq
+from groq import Groq
 st.title("Groq Streamlit Chatbot")
 St.header("Groq Streamlit Chatbot 🤖")
-client = Groq(
+"""client = Groq(
     api_key=st.secrets["GROQ_API_KEY"],
 )
 
