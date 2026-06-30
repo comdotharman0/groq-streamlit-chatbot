@@ -25,8 +25,6 @@ class MyChatBot:
     )
     return chat_completion.choices[0].message.content
 
-def generate_text(question,max_tokens):
-    
 chat_input = st.text_area("Ask Anything")
 chat_submit_btn = st.button("Submit")
 if chat_submit_btn:
