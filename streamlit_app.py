@@ -40,7 +40,7 @@ class MyChatBot:
             })
             self.generate_text(self.chat_input)
         for i in self.messages:
-            st.write(i.content)
+            st.write(i["content"])
             
     
 
