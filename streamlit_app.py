@@ -19,7 +19,7 @@ class MyChatBot:
                 "role": "user",
                 "content": question,
         });
-        chat_completion = client.chat.completions.create(
+        chat_completion = self.client.chat.completions.create(
         messages=[
             self.messages[-1]
         ],
