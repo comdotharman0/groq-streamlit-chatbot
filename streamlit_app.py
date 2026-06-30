@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 from groq import Groq,RateLimitError,APIConnectionError, APIStatusError
 class MyChatBot:
     def __init__(self,name,max_tokens,model):
@@ -57,6 +56,3 @@ def main():
         st.write("That's All!")
 if __name__=="__main__":
     main()
-    
-
-#st.write(pd.DataFrame({"A": [1,2,3],"B":[4,5,6]}))
