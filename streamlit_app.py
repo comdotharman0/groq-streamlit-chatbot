@@ -12,7 +12,9 @@ class MyChatBot:
         self.client = Groq(
     api_key=st.secrets["GROQ_API_KEY"],
         )
-        self.messages = []
+        if "history" not in st.session_state:
+            st.session_state["history"] = []
+        self.messages = st.session_state["history"]
         self.max_tokens=max_tokens
         self.model = model
     def generate_text(self,question):
