@@ -46,14 +46,10 @@ class MyChatBot:
     
 
 def main():
-    try:
-        bot = MyChatBot("Groq Streamlit ChatBot",
+    bot = MyChatBot("Groq Streamlit ChatBot",
                     150,
                     "llama-3.3-70b-versatile")
-        bot.run()
-    except BaseException as e:
-        st.write("Got "+str(e))
-    finally:
-        st.write("That's All!")
+    bot.run()
+    print("Setup Done ✅✅✅")
 if __name__=="__main__":
     main()
