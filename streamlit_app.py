@@ -23,7 +23,7 @@ class MyChatBot:
         model=self.model,
         max_tokens=self.max_tokens,
     )
-    return chat_completion.choices[0].message.content
+        return chat_completion.choices[0].message.content
 
 chat_input = st.text_area("Ask Anything")
 chat_submit_btn = st.button("Submit")
