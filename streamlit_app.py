@@ -28,7 +28,7 @@ class MyChatBot:
     )
         response = chat_completion.choices[0].message.content
         self.messages.append({
-                "role": "system",
+                "role": "assistant",
                 "content": response,
         })
         return self.messages[-1]["content"]
