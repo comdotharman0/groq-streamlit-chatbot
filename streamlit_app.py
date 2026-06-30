@@ -26,4 +26,4 @@ if chat_submit_btn:
 
 
 
-st.write(pd.DataFrame({"A": [1,2,3],"B":[4,5,6]}))
+#st.write(pd.DataFrame({"A": [1,2,3],"B":[4,5,6]}))
