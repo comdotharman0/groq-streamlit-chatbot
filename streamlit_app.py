@@ -21,15 +21,13 @@ class MyChatBot:
                 "content": question,
         });
         chat_completion = self.client.chat.completions.create(
-        messages=[
-            self.messages[-1]
-        ],
+        messages=self.messages,
         model=self.model,
         max_tokens=self.max_tokens,
     )
         response = chat_completion.choices[0].message.content
         self.messages.append({
-                "role": "bot",
+                "role": "system",
                 "content": response,
         })
         return self.messages[-1]["content"]
