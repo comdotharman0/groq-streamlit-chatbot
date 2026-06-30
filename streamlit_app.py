@@ -51,12 +51,8 @@ def main():
                     150,
                     "llama-3.3-70b-versatile")
         bot.run()
-    except RateLimitError as rle:
-        st.write("Got "+str(rle))
-    except APIConnectionError as ace:
-        st.write("Got "+str(ace))
-    except APIStatusError as ase:
-        st.write("Got "+str(ase))
+    except BaseException as e:
+        st.write("Got "+str(e))
     finally:
         st.write("That's All!")
 if __name__=="__main__":
